@@ -1,7 +1,12 @@
 def wordCount(t):
-    lineNum = 0
+    """Takes a file name as a parameter.
+    
+        Returns a dictionary where the keys are the words and
+        values are the lines they occur on.
+    """
+    # counter for the lines
+    lineNum = 0 
     dict = {}
-    # Program to read the entire file using read() function
     file = open(t, "r")
     # reading each line    
     for line in file:
@@ -11,6 +16,8 @@ def wordCount(t):
             # saving word into the dict       
             dict.update({word: lineNum}) 
     file.close()
-    print(dict)
+    return dict
 
-wordCount("file.txt")
+fileName = "file.txt"
+print("Line a word occurs on in file \"" + fileName + "\":" )
+print(wordCount(fileName))
